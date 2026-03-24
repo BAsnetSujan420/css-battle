@@ -31,8 +31,14 @@ const H1 = styled.h1`
   text-align: center;
   margin: 0;
 `;
-const Highlight = styled.span``;
-const Tagline = styled.p``;
+const Highlight = styled.span`
+  color: var(--purple);
+`;
+const Tagline = styled.p`
+  font-size: 15px;
+  color: var(--gray);
+  margin: 0;
+`;
 const InputBox = styled.div`
   background: var(--gray);
   width: 420px;
@@ -50,17 +56,36 @@ const TextArea = styled.textarea`
   outline: none;
   height: 40px;
   resize: none;
+
+  &::placeholder {
+    color: var(--light-gray);
+  }
 `;
 const InputFooter = styled.div`
   display: flex;
   justify-content: flex-end;
 `;
-const Button = styled.button``;
+const Button = styled.button`
+  background: var(--orange);
+  color: var(--white);
+  font-size: 20px;
+  width: 35px;
+  height: 35px;
+  border: none;
+  border-radius: 10px;
+`;
 const Suggestions = styled.div`
   display: flex;
   gap: 10px;
 `;
-const Pill = styled.button``;
+const Pill = styled.button`
+  background: var(--dark-gray);
+  color: var(--white);
+  font-size: 15px;
+  border: none;
+  border-radius: 25px;
+  padding: 10px;
+`;
 
 function MR1() {
   return (
