@@ -5,23 +5,61 @@ const GlobalStyles = createGlobalStyle`
     :root {
     --white: #fffffa;
     --orange: #f58f29;
-    -- purple: #A020F0;
+    --purple: #A020F0;
     --dark-purle: #30173a;
-    --light-gay: #e0e3de;
+    --light-gray: #e0e3de;
     --gray: #60695c;
     --dark-gray: #3c4238;
     }
+
 `;
 
-const Container = styled.div``;
-const H1 = styled.h1``;
+const Container = styled.div`
+  width: 100%;
+  height: 100dvh;
+  background: var(--white);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+`;
+const H1 = styled.h1`
+  font-size: 30px;
+  font-weight: bold;
+  color: var(--dark-purple);
+  text-align: center;
+  margin: 0;
+`;
 const Highlight = styled.span``;
 const Tagline = styled.p``;
-const InputBox = styled.div``;
-const TextArea = styled.textarea``;
-const InputFooter = styled.div``;
+const InputBox = styled.div`
+  background: var(--gray);
+  width: 420px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  padding: 15px;
+`;
+const TextArea = styled.textarea`
+  background: transparent;
+  border: none;
+  padding: 0;
+  font-size: 15px;
+  color: var(--white);
+  outline: none;
+  height: 40px;
+  resize: none;
+`;
+const InputFooter = styled.div`
+  display: flex;
+  justify-content: flex-end;
+`;
 const Button = styled.button``;
-const Suggestions = styled.div``;
+const Suggestions = styled.div`
+  display: flex;
+  gap: 10px;
+`;
 const Pill = styled.button``;
 
 function MR1() {
