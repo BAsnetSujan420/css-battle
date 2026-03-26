@@ -24,21 +24,39 @@ const GlobalStyles = createGlobalStyle`
 
 const Container = styled.div`
   display: grid;
-  grid-template-columns: repeat(3 , 1fr);
-  grid template-rows: repeat(2, 1fr);
-  grid-template-areas: "chad chad brenda" "bae john brenda";
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  grid-template-areas: 'chad chad brenda' 'bae john brenda';
   gap: 10px;
   padding: 10px;
 
+  @media (width < 600px) {
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'chad brenda'
+      'bae john';
+  }
+  @media (width < 540px) {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas:
+      'chad' 'brenda'
+      'bae' 'john';
+  }
+`;
+
+const Wrapper = styled.div`
+  container-type: inline-size;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 `;
 const Testimonial = styled.div`
   position: relative;
   color: var(--white);
   border-radius: 10px;
   padding: 1rem 1rem 0;
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
   box-shadow: 0 4px 6px var(--light-black);
 
   &:nth-child(1) {
@@ -90,6 +108,16 @@ const DoubleQuote = styled.span`
   right: 2rem;
   color: var(--light-black);
   top: 0;
+
+  @container (width < 350px) {
+    bottom: -80px;
+    top: initial;
+    font-size: 9rem;
+    right: 1rem;
+  }
+  @media (width < 450px) {
+    display: none;
+  }
 `;
 
 function QF() {
@@ -98,73 +126,81 @@ function QF() {
       <GlobalStyles />
       <Container>
         <Testimonial>
-          <Author>
-            <Avatar src="https://i.imgur.com/UDDSnXQ.png" />
-            <Info>
-              <Name>Chad Richardson</Name>
-              <Title>Professional Meeting Attendar</Title>
-            </Info>
-          </Author>
-          <Snippet>I literally cannot be more neutral.</Snippet>
-          <Quote>
-            Honestly, I’ve sat through a lot of meetings that go nowhere. This
-            time, things actually moved forward. The team was clear, efficient,
-            and didn’t waste time overcomplicating simple problems. We need
-            someone to do the Quality Assurance on Acme Solution Inc. There
-            service was adequate and their product launched successfully.
-          </Quote>
-          <DoubleQuote>”</DoubleQuote>
+          <Wrapper>
+            <Author>
+              <Avatar src="https://i.imgur.com/UDDSnXQ.png" />
+              <Info>
+                <Name>Chad Richardson</Name>
+                <Title>Professional Meeting Attendar</Title>
+              </Info>
+            </Author>
+            <Snippet>I literally cannot be more neutral.</Snippet>
+            <Quote>
+              Honestly, I’ve sat through a lot of meetings that go nowhere. This
+              time, things actually moved forward. The team was clear,
+              efficient, and didn’t waste time overcomplicating simple problems.
+              We need someone to do the Quality Assurance on Acme Solution Inc.
+              There service was adequate and their product launched
+              successfully.
+            </Quote>
+            <DoubleQuote>”</DoubleQuote>
+          </Wrapper>
+        </Testimonial>
+        <Testimonial>
+          <Wrapper>
+            <Author>
+              <Avatar src="https://i.imgur.com/WohfzpU.png" />
+              <Info>
+                <Name> Brenda Montgomery</Name>
+                <Title>VP of Synergy Optimization</Title>
+              </Info>
+            </Author>
+            <Snippet>Exactly what we needed.</Snippet>
+            <Quote>
+              Their ability to quickly understand our business challenges and
+              translate them into practical solutions was impressive. Execution
+              was consistent, communication was sharp, and the results spoke for
+              themselves. Absolutely not an issue if the quality is not
+              compromised. Lets communicate for the further feature to be
+              included in Q4. New year resolution is absolutely welcomed in our
+              company. We are thrinving in the age of AI. Lets continue with the
+              Codex and Copilot in future to solve our problems.
+            </Quote>
+          </Wrapper>
         </Testimonial>
 
         <Testimonial>
-          <Author>
-            <Avatar src="https://i.imgur.com/WohfzpU.png" />
-            <Info>
-              <Name> Brenda Montgomery</Name>
-              <Title>VP of Synergy Optimization</Title>
-            </Info>
-          </Author>
-          <Snippet>Exactly what we needed.</Snippet>
-          <Quote>
-            Their ability to quickly understand our business challenges and
-            translate them into practical solutions was impressive. Execution
-            was consistent, communication was sharp, and the results spoke for
-            themselves. Absolutely not an issue if the quality is not
-            compromised. Lets communicate for the further feature to be included
-            in Q4. New year resolution is absolutely welcomed in our company. We
-            are thrinving in the age of AI. Lets continue with the Codex and
-            Copilot in future to solve our problems.
-          </Quote>
+          <Wrapper>
+            <Author>
+              <Avatar src="https://randomuser.me/api/portraits/women/90.jpg" />
+              <Info>
+                <Name>Bae Donna</Name>
+                <Title>Senior Designer</Title>
+              </Info>
+            </Author>
+            <Snippet>Surprisingly effective.</Snippet>
+            <Quote>
+              I wasn’t expecting much, but the results were actually solid. The
+              team delivered on time and communication was smooth.
+            </Quote>
+          </Wrapper>
         </Testimonial>
 
         <Testimonial>
-          <Author>
-            <Avatar src="https://randomuser.me/api/portraits/women/90.jpg" />
-            <Info>
-              <Name>Bae Donna</Name>
-              <Title>Senior Designer</Title>
-            </Info>
-          </Author>
-          <Snippet>Surprisingly effective.</Snippet>
-          <Quote>
-            I wasn’t expecting much, but the results were actually solid. The
-            team delivered on time and communication was smooth.
-          </Quote>
-        </Testimonial>
-
-        <Testimonial>
-          <Author>
-            <Avatar src="https://randomuser.me/api/portraits/men/9.jpg" />
-            <Info>
-              <Name>John Morrison</Name>
-              <Title>Senior Product Manager</Title>
-            </Info>
-          </Author>
-          <Snippet>Low expectations.</Snippet>
-          <Quote>
-            Clean code, reliable delivery, and no unnecessary complexity. That’s
-            rare. Definitely working with them again.
-          </Quote>
+          <Wrapper>
+            <Author>
+              <Avatar src="https://randomuser.me/api/portraits/men/9.jpg" />
+              <Info>
+                <Name>John Morrison</Name>
+                <Title>Senior Product Manager</Title>
+              </Info>
+            </Author>
+            <Snippet>Low expectations.</Snippet>
+            <Quote>
+              Clean code, reliable delivery, and no unnecessary complexity.
+              That’s rare. Definitely working with them again.
+            </Quote>
+          </Wrapper>
         </Testimonial>
       </Container>
     </>
