@@ -68,14 +68,29 @@ const Avatar = styled.img`
   border-radius: 50%;
 `;
 const Info = styled.div``;
-const Title = styled.span``;
+const Title = styled.span`
+  font-size: 12px;
+  font-style: italic;
+  font-weight: 400;
+`;
 const Name = styled.span`
   display: block;
+  font-size: 1.1rem;
+  font-weight: bold;
+  margin-bottom: 2px;
 `;
-const Snippet = styled.p``;
+const Snippet = styled.p`
+  font-size: 1.1rem;
+`;
 const Quote = styled.p``;
 
-const DoubleQuote = styled.span``;
+const DoubleQuote = styled.span`
+  font-size: 10rem;
+  position: absolute;
+  right: 2rem;
+  color: var(--light-black);
+  top: 0;
+`;
 
 function QF() {
   return (
