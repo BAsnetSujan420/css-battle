@@ -22,13 +22,56 @@ const GlobalStyles = createGlobalStyle`
     }
 `;
 
-const Container = styled.div``;
-const Testimonial = styled.div``;
-const Author = styled.div``;
-const Avatar = styled.img``;
+const Container = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3 , 1fr);
+  grid template-rows: repeat(2, 1fr);
+  grid-template-areas: "chad chad brenda" "bae john brenda";
+  gap: 10px;
+  padding: 10px;
+
+`;
+const Testimonial = styled.div`
+  position: relative;
+  color: var(--white);
+  border-radius: 10px;
+  padding: 1rem 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  box-shadow: 0 4px 6px var(--light-black);
+
+  &:nth-child(1) {
+    background: var(--navy);
+    grid-area: chad;
+  }
+  &:nth-child(2) {
+    background: var(--purple);
+    grid-area: brenda;
+  }
+  &:nth-child(3) {
+    background: var(--plum);
+    grid-area: bae;
+  }
+  &:nth-child(4) {
+    background: var(--blue);
+    grid-area: john;
+  }
+`;
+const Author = styled.div`
+  display: flex;
+  gap: 1rem;
+`;
+const Avatar = styled.img`
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+`;
 const Info = styled.div``;
 const Title = styled.span``;
-const Name = styled.span``;
+const Name = styled.span`
+  display: block;
+`;
 const Snippet = styled.p``;
 const Quote = styled.p``;
 
