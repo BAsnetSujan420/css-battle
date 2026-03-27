@@ -23,6 +23,8 @@ const GlobalStyles = createGlobalStyle`
 `;
 
 const Container = styled.div`
+  width: 100%;
+  height: 100%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(2, 1fr);
@@ -52,28 +54,55 @@ const Wrapper = styled.div`
   flex-direction: column;
   gap: 10px;
 `;
+
+const Quote = styled.p`
+  position: relative;
+
+  &::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    height: 60px;
+    width: 100%;
+  }
+`;
+
 const Testimonial = styled.div`
   position: relative;
   color: var(--white);
   border-radius: 10px;
   padding: 1rem 1rem 0;
+  overflow: hidden;
   box-shadow: 0 4px 6px var(--light-black);
 
   &:nth-child(1) {
     background: var(--navy);
     grid-area: chad;
   }
+  &:nth-child(1) ${Quote}::after {
+    background: linear-gradient(transparent, var(--navy));
+  }
   &:nth-child(2) {
     background: var(--purple);
     grid-area: brenda;
+  }
+  &:nth-child(2) ${Quote}::after {
+    background: linear-gradient(transparent, var(--purple));
   }
   &:nth-child(3) {
     background: var(--plum);
     grid-area: bae;
   }
+  &:nth-child(3) ${Quote}::after {
+    background: linear-gradient(transparent, var(--plum));
+  }
   &:nth-child(4) {
     background: var(--blue);
     grid-area: john;
+  }
+  &:nth-child(4) ${Quote}::after {
+    background: linear-gradient(transparent, var(--blue));
   }
 `;
 const Author = styled.div`
@@ -100,7 +129,6 @@ const Name = styled.span`
 const Snippet = styled.p`
   font-size: 1.1rem;
 `;
-const Quote = styled.p``;
 
 const DoubleQuote = styled.span`
   font-size: 10rem;
