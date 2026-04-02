@@ -36,6 +36,7 @@ const Container = styled.div`
   gap: 25px;
   padding: 40px;
   border-radius: 2px;
+  background: linear-gradient(var(--orange), var(--white) 5px);
 `;
 const ProductDetails = styled.div`
   grid-area: description;
@@ -88,14 +89,51 @@ const ThumbnailImage = styled.img`
 `;
 
 const ProductPricing = styled.div``;
-const ProductBrand = styled.span``;
-const ProductTitle = styled.span``;
-const ProductDesc = styled.span``;
-const PriceRow = styled.div``;
 
-const CurrentPrice = styled.span``;
-const DiscountBadge = styled.span``;
-const OriginalPrice = styled.span``;
+const ProductBrand = styled.span`
+  font-size: 0.8rem;
+  font-weight: bold;
+  letter-spacing: 10px;
+  color: var(--orange);
+  text-transform: uppercase;
+`;
+const ProductTitle = styled.h1`
+  margin: 0;
+  font-size: 1.7rem;
+  font-weight: bold;
+  color: var(--dark);
+`;
+const ProductDesc = styled.p`
+  margin: 0;
+  font-size: 0.8rem;
+  color: var(--gray);
+`;
+const PriceRow = styled.div`
+  display: flex;
+  align-items: center;
+  gap: 10px;
+`;
+
+const CurrentPrice = styled.span`
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: var(--dark);
+  letter-spacing: 1px;
+`;
+const DiscountBadge = styled.span`
+  font-size: 0.8rem;
+  font-weight: bold;
+  color: var(--orange);
+  background: var(--light-orange);
+  letter-spacing: 1px;
+  padding: 5px;
+  border-radius: 5px;
+`;
+const OriginalPrice = styled.span`
+  font-size: 0.8rem;
+  color: var(--light-gray);
+  text-decoration: line-through;
+`;
 const CartButton = styled.button`
   flex: 1;
   height: 40px;
