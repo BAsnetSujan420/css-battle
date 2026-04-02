@@ -73,6 +73,12 @@ const Image = styled.img`
 const Thumbnail = styled.div`
   width: 45px;
   height: 45px;
+  background: var(--light-orange);
+  border-radius: 10px;
+  border: 5px solid transparent;
+  &.active {
+    border-color: var(--orange);
+  }
 `;
 const ThumbnailImage = styled.img`
   width: 100%;
@@ -93,6 +99,17 @@ const OriginalPrice = styled.span``;
 const CartButton = styled.button`
   flex: 1;
   height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--orange);
+  border: none;
+  border-radius: 10px;
+  font-size: 0.8rem;
+  color: var(--white);
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 5px;
 `;
 
 function SM() {
