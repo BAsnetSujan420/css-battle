@@ -25,15 +25,61 @@ background: var(--light-gray);
 const Container = styled.div`
   width: 600px;
   height: 400px;
-`;
-const ProductDetails = styled.div``;
-const ProductThumbnails = styled.div``;
-const PurchaseControls = styled.div``;
-const ProductImage = styled.div``;
+  background: var(--white);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 60px;
+  grid-template-areas:
+    'image description'
+    'thumbnails controls';
 
-const Image = styled.img``;
-const Thumbnail = styled.div``;
-const ThumbnailImage = styled.img``;
+  gap: 25px;
+  padding: 40px;
+  border-radius: 2px;
+`;
+const ProductDetails = styled.div`
+  grid-area: description;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 15px;
+`;
+const ProductThumbnails = styled.div`
+  grid-area: thumbnails;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+`;
+const PurchaseControls = styled.div`
+  grid-area: controls;
+  display: flex;
+  align-items: center;
+`;
+const ProductImage = styled.div`
+  grid-area: image;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  border-radius: 15px;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;
+const Thumbnail = styled.div`
+  width: 45px;
+  height: 45px;
+`;
+const ThumbnailImage = styled.img`
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 5px;
+`;
 
 const ProductPricing = styled.div``;
 const ProductBrand = styled.span``;
@@ -44,7 +90,10 @@ const PriceRow = styled.div``;
 const CurrentPrice = styled.span``;
 const DiscountBadge = styled.span``;
 const OriginalPrice = styled.span``;
-const CartButton = styled.button``;
+const CartButton = styled.button`
+  flex: 1;
+  height: 40px;
+`;
 
 function SM() {
   return (
